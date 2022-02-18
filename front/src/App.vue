@@ -8,6 +8,7 @@
         b-nav-item(v-if="!user.isLogin" to='/register') 註冊
         b-nav-item(v-if="!user.isLogin" to='/login') 登入
         b-nav-item(v-if="user.isLogin" @click="logout") 登出
+        b-nav-item(v-if="user.isLogin && user.isAdmin" to='/admin') 管理中心
   router-view
 </template>
 

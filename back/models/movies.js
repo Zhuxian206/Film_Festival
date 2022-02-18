@@ -9,8 +9,7 @@ const movieSchema = new mongoose.Schema({
     type: String
   },
   image: {
-    type: [String],
-    required: [true, '劇照為必填欄位']
+    type: String
   },
   director: {
     type: String,
@@ -19,7 +18,7 @@ const movieSchema = new mongoose.Schema({
   directorDesc: {
     type: String
   },
-  post: {
+  upState: {
     type: Boolean,
     default: false
   }

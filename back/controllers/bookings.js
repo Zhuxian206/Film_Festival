@@ -1,8 +1,8 @@
-import movies from '../models/movies.js'
+import bookings from '../models/bookings.js'
 
 export const create = async (req, res) => {
   try {
-    const result = await movies.create({ ...req.body, image: req.file.path })
+    const result = await bookings.create({ ...req.body, image: req.file.path })
     res.status(200).send({ success: true, message: '', result })
   } catch (error) {
     if (error.name === 'ValidationError') {
@@ -14,27 +14,27 @@ export const create = async (req, res) => {
   }
 }
 
-export const getMovies = async (req, res) => {
+export const getBookings = async (req, res) => {
   try {
-    const result = await movies.find({ upState: true })
+    const result = await bookings.find({ sell: true })
     res.status(200).send({ success: true, message: '', result })
   } catch (error) {
     res.status(500).send({ success: false, message: '伺服器錯誤' })
   }
 }
 
-export const getAllMovies = async (req, res) => {
+export const getAllBookings = async (req, res) => {
   try {
-    const result = await movies.find()
+    const result = await bookings.find()
     res.status(200).send({ success: true, message: '', result })
   } catch (error) {
     res.status(500).send({ success: false, message: '伺服器錯誤' })
   }
 }
 
-export const getMovieById = async (req, res) => {
+export const getBookingById = async (req, res) => {
   try {
-    const result = await movies.findById(req.params.id)
+    const result = await bookings.findById(req.params.id)
     if (result) {
       res.status(200).send({ success: true, message: '', result })
     } else {
@@ -49,21 +49,22 @@ export const getMovieById = async (req, res) => {
   }
 }
 
-export const updateMovieById = async (req, res) => {
+export const updateBookingById = async (req, res) => {
   const data = {
+    mId: req.body.mId,
     name: req.body.name,
-    description: req.body.description,
-    post: req.body.post,
-    director: req.body.director,
-    directorDesc: req.body.directorDesc,
-    upState: req.body.upState
+    date: req.body.date,
+    time: req.body.time,
+    price: req.body.price,
+    seat: req.body.seat,
+    sell: req.body.sell
   }
 
   if (req.file) {
     data.image = req.file.path
   }
   try {
-    const result = await movies.findByIdAndUpdate(req.params.id, data, { new: true, runValidators: true })
+    const result = await bookings.findByIdAndUpdate(req.params.id, data, { new: true, runValidators: true })
     res.status(200).send({ success: true, message: '', result })
   } catch (error) {
     if (error.name === 'CastError') {

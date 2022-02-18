@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const movieSchema = new mongoose.Schema({
+const bookingSchema = new mongoose.Schema({
   mId: {
     type: mongoose.ObjectId,
     ref: 'movies'
@@ -11,7 +11,7 @@ const movieSchema = new mongoose.Schema({
   },
   date: {
     type: Date,
-    default: Date
+    required: [true, '日期為必填欄位']
   },
   time: {
     type: String,
@@ -19,6 +19,11 @@ const movieSchema = new mongoose.Schema({
       values: ['上午場', '下午場'],
       message: '沒有該場次'
     }
+  },
+  price: {
+    type: Number,
+    min: [0, '價格格式不正確'],
+    required: [true, '票券價格不能為空']
   },
   seat: {
     type: [Boolean],
@@ -41,10 +46,10 @@ const movieSchema = new mongoose.Schema({
       'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12'
     ]
   },
-  post: {
+  sell: {
     type: Boolean,
     default: false
   }
 })
 
-export default mongoose.model('movies', movieSchema)
+export default mongoose.model('bookings', bookingSchema)

@@ -43,10 +43,10 @@ const userSchema = new mongoose.Schema({
           ref: 'bookings',
           required: [true, '缺少選定場次 ID']
         },
-        seat: {
-          type: [String],
-          required: [true, '缺少座位編號']
-        },
+        // seat: {
+        //   type: [String],
+        //   required: [true, '缺少座位編號']
+        // },
         quantity: {
           type: Number,
           required: [true, '缺少預定張數']
