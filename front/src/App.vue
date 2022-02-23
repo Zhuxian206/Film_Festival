@@ -5,6 +5,7 @@
     b-navbar-toggle(target='nav-collapse')
     b-collapse#nav-collapse(is-nav)
       b-navbar-nav.ml-auto
+        b-nav-item(to='/movies') 節目資訊
         b-nav-item(v-if="!user.isLogin" to='/register') 註冊
         b-nav-item(v-if="!user.isLogin" to='/login') 登入
         b-nav-item(v-if="user.isLogin" @click="logout") 登出

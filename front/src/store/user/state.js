@@ -7,8 +7,7 @@ export default () => {
     role: 0,
     email: '',
     cart: [],
-    name: '',
-    phone: '',
-    followTag: []
+    realName: '',
+    cellPhone: ''
   }
 }

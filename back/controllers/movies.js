@@ -53,7 +53,6 @@ export const updateMovieById = async (req, res) => {
   const data = {
     name: req.body.name,
     description: req.body.description,
-    post: req.body.post,
     director: req.body.director,
     directorDesc: req.body.directorDesc,
     upState: req.body.upState

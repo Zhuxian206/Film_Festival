@@ -10,7 +10,7 @@ import {
   getAllNews,
   getNewById,
   updateNewById
-} from '../controllers/bookings.js'
+} from '../controllers/news.js'
 
 const router = express.Router()
 

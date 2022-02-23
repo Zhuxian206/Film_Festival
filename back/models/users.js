@@ -28,13 +28,13 @@ const userSchema = new mongoose.Schema({
   role: {
     // 0 = 一般會員
     // 1 = 管理員
+    // 2 = 封鎖
     type: Number,
     default: 0
   },
   tokens: {
     type: [String]
   },
-  // cart 待確認要不要移出去
   cart: {
     type: [
       {
@@ -54,10 +54,10 @@ const userSchema = new mongoose.Schema({
       }
     ]
   },
-  name: {
+  realName: {
     type: String
   },
-  phone: {
+  cellPhone: {
     type: String,
     default: '手機號碼'
     // validate: {
@@ -66,20 +66,7 @@ const userSchema = new mongoose.Schema({
     //   },
     //   message: '手機號碼格式不正確'
     // }
-  },
-  followTag: {
-    type: [String]
   }
-  // comments: {
-  //   nId: {
-  //     type: mongoose.ObjectId,
-  //     ref: 'news'
-  //   },
-  //   comment: {
-  //     type: String,
-  //     required: [true, '內容不能為空']
-  //   }
-  // }
 }, { versionKey: false })
 
 // isMobilePhone 檢測是否為手機號碼

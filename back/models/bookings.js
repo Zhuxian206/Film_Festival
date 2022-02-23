@@ -1,10 +1,6 @@
 import mongoose from 'mongoose'
 
 const bookingSchema = new mongoose.Schema({
-  mId: {
-    type: mongoose.ObjectId,
-    ref: 'movies'
-  },
   name: {
     type: String,
     required: [true, '片名為必填欄位']

@@ -9,15 +9,15 @@ const orderSchema = new mongoose.Schema({
   movies: {
     type: [
       {
-        movie: {
+        booking: {
           type: mongoose.ObjectId,
-          ref: 'movies',
+          ref: 'bookings',
           required: [true, '缺少影片 ID']
         },
-        seat: {
-          type: String,
-          required: [true, '缺少座位編號']
-        },
+        // seat: {
+        //   type: String,
+        //   required: [true, '缺少座位編號']
+        // },
         quantity: {
           type: Number,
           required: [true, '缺少預定張數']

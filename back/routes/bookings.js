@@ -9,7 +9,8 @@ import {
   getBookings,
   getAllBookings,
   getBookingById,
-  updateBookingById
+  updateBookingById,
+  updateBookingByOrder
 } from '../controllers/bookings.js'
 
 const router = express.Router()
@@ -19,5 +20,5 @@ router.get('/', getBookings)
 router.get('/all', auth, admin, getAllBookings)
 router.get('/:id', getBookingById)
 router.patch('/:id', auth, admin, content('multipart/form-data'), upload, updateBookingById)
-
+router.patch('/:id', auth, content('multipart/form-data'), updateBookingByOrder)
 export default router

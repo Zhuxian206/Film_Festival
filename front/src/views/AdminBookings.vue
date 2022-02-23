@@ -12,7 +12,6 @@ export default {
   data () {
     return {
       form: {
-        mId: {},
         name: '',
         date: '',
         price: 0,

@@ -15,6 +15,14 @@ const routes = [
     }
   },
   {
+    path: '/movies',
+    name: 'Movies',
+    component: () => import(/* webpackChunkName: "movies" */ '../views/Movies.vue'),
+    meta: {
+      title: '節目資訊 | 天空影展'
+    }
+  },
+  {
     path: '/register',
     name: 'Register',
     component: () => import(/* webpackChunkName: "register" */ '../views/Register.vue'),
