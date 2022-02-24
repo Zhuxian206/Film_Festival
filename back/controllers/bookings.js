@@ -49,29 +49,9 @@ export const getBookingById = async (req, res) => {
   }
 }
 
-export const updateBookingByOrder = async (req, res) => {
-  const data = {
-    seat: req.body.seat
-  }
-  try {
-    const result = await bookings.findByIdAndUpdate(req.params.id, data, { new: true, runValidators: true })
-    res.status(200).send({ success: true, message: '', result })
-  } catch (error) {
-    if (error.name === 'CastError') {
-      res.status(404).send({ success: false, message: '找不到' })
-    } else if (error.name === 'ValidationError') {
-      const key = Object.keys(error.errors)[0]
-      res.status(400).send({ success: false, message: error.errors[key].message })
-    } else {
-      res.status(500).send({ success: false, message: '伺服器錯誤' })
-    }
-  }
-}
-
 export const updateBookingById = async (req, res) => {
   const data = {
     // mId: req.body.mId,
-    name: req.body.name,
     date: req.body.date,
     time: req.body.time,
     price: req.body.price,
@@ -79,9 +59,6 @@ export const updateBookingById = async (req, res) => {
     sell: req.body.sell
   }
 
-  if (req.file) {
-    data.image = req.file.path
-  }
   try {
     const result = await bookings.findByIdAndUpdate(req.params.id, data, { new: true, runValidators: true })
     res.status(200).send({ success: true, message: '', result })

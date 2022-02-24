@@ -1,7 +1,7 @@
 <template lang="pug">
-b-container
+b-container#movies
   b-row
-    b-col(cols='12' md='6' lg='3'  v-for='movie in movies' :key='movie._id')
+    b-col(cols='12' md='6' lg='3' v-for='movie in movies' :key='movie._id')
       MovieCard(:movie='movie')
 </template>
 
@@ -14,18 +14,18 @@ export default {
   },
   data () {
     return {
-      products: []
+      movies: []
     }
   },
   async created () {
     try {
       const { data } = await this.api.get('/movies')
-      this.products = data.result
+      this.movies = data.result
     } catch (error) {
       this.$swal({
         icon: 'error',
         title: '錯誤',
-        text: '商品取得失敗'
+        text: '片單取得失敗'
       })
     }
   }

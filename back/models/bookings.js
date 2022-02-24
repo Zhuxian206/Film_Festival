@@ -1,12 +1,8 @@
 import mongoose from 'mongoose'
 
 const bookingSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, '片名為必填欄位']
-  },
   date: {
-    type: Date,
+    type: String,
     required: [true, '日期為必填欄位']
   },
   time: {
@@ -45,6 +41,11 @@ const bookingSchema = new mongoose.Schema({
   sell: {
     type: Boolean,
     default: false
+  },
+  movie: {
+    type: mongoose.ObjectId,
+    ref: 'movies',
+    required: [true, '缺少影片ID']
   }
 })
 
