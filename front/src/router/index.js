@@ -177,6 +177,11 @@ const routes = [
         }
       }
     ]
+  },
+  {
+    path: '*',
+    name: 'NotFound',
+    redirect: '/'
   }
 ]
 

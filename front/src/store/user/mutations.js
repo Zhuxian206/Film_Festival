@@ -9,9 +9,8 @@ export const login = (state, data) => {
   state.role = data.role
   state.email = data.email
   state.cart = data.cart
-  state.name = data.name
-  state.phone = data.phone
-  state.followTag = data.followTag
+  state.realName = data.realName
+  state.cellPhone = data.cellPhone
 }
 
 export const logout = (state, data) => {
@@ -19,10 +18,9 @@ export const logout = (state, data) => {
   state.account = ''
   state.role = 0
   state.email = ''
-  state.cart = []
-  state.name = ''
-  state.phone = ''
-  state.followTag = []
+  state.cart = 0
+  state.realName = ''
+  state.cellPhone = ''
 }
 
 export const getInfo = (state, data) => {
@@ -30,9 +28,8 @@ export const getInfo = (state, data) => {
   state.role = data.role
   state.email = data.email
   state.cart = data.cart
-  state.name = data.name
-  state.phone = data.phone
-  state.followTag = data.followTag
+  state.realName = data.realName
+  state.cellPhone = data.cellPhone
 }
 
 export const extend = (state, data) => {
