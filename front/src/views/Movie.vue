@@ -22,7 +22,8 @@ export default {
       image: '',
       director: '',
       directorDesc: '',
-      upState: false
+      upState: false,
+      booking: ''
     }
   },
   async created () {
@@ -35,6 +36,7 @@ export default {
       this.director = data.result.director
       this.directorDesc = data.result.directorDesc
       this.upState = data.result.upState
+      this.booking = data.result.booking
 
       document.title = `${this.name} | 天空影展`
     } catch (error) {

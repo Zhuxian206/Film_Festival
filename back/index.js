@@ -4,7 +4,6 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import usersRouter from './routes/users.js'
 import moviesRouter from './routes/movies.js'
-import bookingsRouter from './routes/bookings.js'
 import newsRouter from './routes/news.js'
 
 mongoose.connect(process.env.DB_URL, () => {
@@ -34,7 +33,6 @@ app.use((_, req, res, next) => {
 
 app.use('/users', usersRouter)
 app.use('/movies', moviesRouter)
-app.use('/bookings', bookingsRouter)
 app.use('/news', newsRouter)
 
 // 擋 404

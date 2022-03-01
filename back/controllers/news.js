@@ -1,6 +1,6 @@
 import news from '../models/news.js'
 
-export const create = async (req, res) => {
+export const createNews = async (req, res) => {
   try {
     const result = await news.create({ ...req.body, image: req.file.path })
     res.status(200).send({ success: true, message: '', result })
@@ -66,6 +66,7 @@ export const updateNewById = async (req, res) => {
     res.status(200).send({ success: true, message: '', result })
   } catch (error) {
     if (error.name === 'CastError') {
+      console.log(error)
       res.status(404).send({ success: false, message: '找不到' })
     } else if (error.name === 'ValidationError') {
       const key = Object.keys(error.errors)[0]

@@ -21,7 +21,7 @@
     :cancel-disabled="modalSubmitting"
   )
     b-form-group(
-      label='電影名稱ㄋ'
+      label='電影名稱'
       label-for='input-name'
       description='必填欄位'
       invalid-feedback='電影名稱必填'
@@ -101,7 +101,6 @@ export default {
         { key: 'image', label: '' },
         { key: 'name', label: '片名' },
         { key: 'director', label: '導演' },
-        { key: 'description', label: '簡介' },
         { key: 'upState', label: '上架' },
         { key: 'action', label: '操作' }
       ],
@@ -209,7 +208,7 @@ export default {
       this.$swal({
         icon: 'error',
         title: '錯誤',
-        text: '取得商品失敗'
+        text: '取得影片失敗'
       })
     }
   }

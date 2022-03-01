@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$breakpoint-sm:576px;
+$breakpoint-md:768px;
+$breakpoint-lg:992px;
+$breakpoint-xl:1200px;
+$breakpoint-xxl:1400px;
+
+$themewordcolor:rgb(33, 33, 33);
+$bgcolor:rgb(255, 255, 255);
+$darkbgcolor:rgb(242, 242, 242);
+
+html,body{
+  font-family: 'Noto Sans TC', sans-serif;
+  font-family: 'Noto Serif TC', serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+

@@ -31,21 +31,37 @@ const routes = [
     }
   },
   {
-    path: '/bookingPage',
-    name: 'BookingPage',
-    component: () => import(/* webpackChunkName: "bookings" */ '../views/BookingPage.vue'),
+    path: '/screenings',
+    name: 'Screenings',
+    component: () => import(/* webpackChunkName: "screenings" */ '../views/Screenings.vue'),
     meta: {
-      title: '影展購票 | 天空影展'
+      title: '本季場次 | 天空影展'
     }
   },
   {
-    path: '/booking/:id',
-    name: 'Booking',
-    component: () => import(/* webpackChunkName: "booking" */ '../views/Booking.vue'),
+    path: '/questions',
+    name: 'Questions',
+    component: () => import(/* webpackChunkName: "questions" */ '../views/Questions.vue'),
     meta: {
-      title: '場次 | 天空影展'
+      title: '常見問題 | 天空影展'
     }
   },
+  // {
+  //   path: '/bookingPage',
+  //   name: 'BookingPage',
+  //   component: () => import(/* webpackChunkName: "bookings" */ '../views/BookingPage.vue'),
+  //   meta: {
+  //     title: '影展購票 | 天空影展'
+  //   }
+  // },
+  // {
+  //   path: '/booking/:id',
+  //   name: 'Booking',
+  //   component: () => import(/* webpackChunkName: "booking" */ '../views/Booking.vue'),
+  //   meta: {
+  //     title: '場次 | 天空影展'
+  //   }
+  // },
   {
     path: '/newsPage',
     name: 'NewsPage',
@@ -60,6 +76,14 @@ const routes = [
         component: () => import(/* webpackChunkName: "news" */ '../views/NewsHome.vue'),
         meta: {
           title: '消息中心 | 天空影展'
+        }
+      },
+      {
+        path: 'all',
+        name: 'NewsAll',
+        component: () => import(/* webpackChunkName: "news" */ '../views/NewsAll.vue'),
+        meta: {
+          title: '新聞 | 天空影展'
         }
       },
       {
@@ -120,6 +144,7 @@ const routes = [
       title: '登入 | 天空影展'
     }
   },
+  // 管理員 -------------------------------------
   {
     path: '/admin',
     name: 'Admin',
@@ -136,16 +161,16 @@ const routes = [
           title: '管理中心 | 天空影展'
         }
       },
-      {
-        path: 'bookings',
-        name: 'AdminBookings',
-        component: () => import(/* webpackChunkName: "admin" */ '../views/AdminBookings.vue'),
-        meta: {
-          login: true,
-          admin: true,
-          title: '場次管理 | 天空影展'
-        }
-      },
+      // {
+      //   path: 'bookings',
+      //   name: 'AdminBookings',
+      //   component: () => import(/* webpackChunkName: "admin" */ '../views/AdminBookings.vue'),
+      //   meta: {
+      //     login: true,
+      //     admin: true,
+      //     title: '場次管理 | 天空影展'
+      //   }
+      // },
       {
         path: 'movies',
         name: 'AdminMovies',
@@ -174,6 +199,44 @@ const routes = [
           login: true,
           admin: true,
           title: '訂單管理 | 天空影展'
+        }
+      }
+    ]
+  },
+  // 會員中心-------------------------
+  {
+    path: '/user',
+    name: 'User',
+    component: () => import(/* webpackChunkName: "user" */ '../views/User.vue'),
+    children: [
+      {
+        path: '',
+        name: 'UserHome',
+        component: () => import(/* webpackChunkName: "user" */ '../views/UserHome.vue'),
+        meta: {
+          login: true,
+          admin: false,
+          title: '會員中心 | 天空影展'
+        }
+      },
+      {
+        path: 'data',
+        name: 'UserData',
+        component: () => import(/* webpackChunkName: "user" */ '../views/UserData.vue'),
+        meta: {
+          login: true,
+          admin: false,
+          title: '會員資料 | 天空影展'
+        }
+      },
+      {
+        path: 'order',
+        name: 'UserOrder',
+        component: () => import(/* webpackChunkName: "user" */ '../views/UserOrder.vue'),
+        meta: {
+          login: true,
+          admin: false,
+          title: '歷史訂單 | 天空影展'
         }
       }
     ]

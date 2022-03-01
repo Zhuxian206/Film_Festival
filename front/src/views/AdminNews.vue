@@ -9,7 +9,7 @@
     template(#cell(action)='data')
       b-btn(variant='success' @click='editNews(data.index)') 編輯
   b-modal#modal-new(
-    :title="form._id.length > 0 ? '編輯公告' : '新增公告'"
+    :title="form._id.length > 0 ? '編輯消息' : '新增消息'"
     centered
     ok-variant='success'
     ok-title='送出'
@@ -86,9 +86,8 @@ export default {
     return {
       fields: [
         { key: 'image', label: '' },
-        { key: 'name', label: '片名' },
+        { key: 'name', label: '標題' },
         { key: 'date', label: '日期' },
-        { key: 'description', label: '簡介' },
         { key: 'category', label: '分類' },
         { key: 'upState', label: '上架' },
         { key: 'action', label: '操作' }
@@ -102,8 +101,7 @@ export default {
       form: {
         name: '',
         description: '',
-        image: '',
-        date: '',
+        image: null,
         category: '',
         upState: false,
         _id: '',
@@ -177,8 +175,7 @@ export default {
       this.form = {
         name: '',
         description: '',
-        image: '',
-        date: '',
+        image: null,
         category: '',
         upState: false,
         _id: ''
@@ -189,7 +186,7 @@ export default {
       this.$bvModal.show('modal-new')
     }
   },
-  async created () {
+  async createdNews () {
     try {
       const { data } = await this.api.get('/news/all', {
         headers: {
@@ -201,7 +198,7 @@ export default {
       this.$swal({
         icon: 'error',
         title: '錯誤',
-        text: '取得商品失敗'
+        text: '取得消息失敗'
       })
     }
   }

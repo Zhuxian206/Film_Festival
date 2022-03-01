@@ -5,7 +5,7 @@ import admin from '../middleware/admin.js'
 import upload from '../middleware/upload.js'
 
 import {
-  create,
+  createNews,
   getNews,
   getAllNews,
   getNewById,
@@ -14,7 +14,7 @@ import {
 
 const router = express.Router()
 
-router.post('/', auth, admin, content('multipart/form-data'), upload, create)
+router.post('/', auth, admin, content('multipart/form-data'), upload, createNews)
 router.get('/', getNews)
 router.get('/all', auth, admin, getAllNews)
 router.get('/:id', getNewById)

@@ -28,7 +28,6 @@ const userSchema = new mongoose.Schema({
   role: {
     // 0 = 一般會員
     // 1 = 管理員
-    // 2 = 封鎖
     type: Number,
     default: 0
   },

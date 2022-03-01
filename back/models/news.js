@@ -26,31 +26,31 @@ const newSchema = new mongoose.Schema({
   upState: {
     type: Boolean,
     default: false
-  },
-  comments: {
-    uId: {
-      type: mongoose.ObjectId,
-      ref: 'users'
-    },
-    word: {
-      type: String,
-      maxlength: [300, '內文最多字數為300字'],
-      required: [true, '內容不能為空']
-    },
-    date: {
-      type: Date,
-      required: Date.now
-    },
-    isban: {
-      type: Number,
-      // 0 = 顯示
-      // 1 = 被檢舉
-      // 2 = 不顯示
-      default: 0,
-      required: [true, '缺少留言狀態']
-    }
-
   }
+  // comments: {
+  //   uId: {
+  //     type: mongoose.ObjectId,
+  //     ref: 'users'
+  //   },
+  //   word: {
+  //     type: String,
+  //     maxlength: [300, '內文最多字數為300字'],
+  //     required: [true, '內容不能為空']
+  //   },
+  //   date: {
+  //     type: Date,
+  //     required: Date.now
+  //   },
+  //   isban: {
+  //     type: Number,
+  //     // 0 = 顯示
+  //     // 1 = 被檢舉
+  //     // 2 = 不顯示
+  //     default: 0,
+  //     required: [true, '缺少留言狀態']
+  //   }
+
+  // }
 })
 
 export default mongoose.model('news', newSchema)
