@@ -5,9 +5,10 @@
     template(#cell(image)='data')
       img(v-if='data.item.image' :src='data.item.image' style='height: 50px')
     template(#cell(upState)='data')
-      | {{ data.item.upState ? 'v' : '' }}
+      b-icon(v-if='data.item.upState' icon="arrow-bar-up")
     template(#cell(action)='data')
-      b-btn(variant='success' @click='editMovie(data.index)') 編輯
+      b-btn(variant='dark' @click='editMovie(data.index)')
+        b-icon(icon="brush")
   b-modal#modal-movie(
     :title="form._id.length > 0 ? '編輯影片' : '新增影片'"
     centered

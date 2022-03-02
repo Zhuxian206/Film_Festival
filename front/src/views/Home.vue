@@ -1,5 +1,5 @@
 <template lang="pug">
-#home.w-100
+#home
   video.w-100(autoplay='', muted='', loop='')
     source(src='../assets/pexels-naga-sumanth-l-5512078.mp4', type='video/mp4')
   .toptittle

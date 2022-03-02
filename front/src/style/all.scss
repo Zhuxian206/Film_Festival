@@ -13,7 +13,23 @@ $darkbgcolor:rgb(242, 242, 242);
 html,body{
   font-family: 'Noto Sans TC', sans-serif;
   font-family: 'Noto Serif TC', serif;
-  font-family: 'Roboto', sans-serif;
+  // font-family: 'Roboto', sans-serif;
+  height: 100%;
+  width: 100%;
+  background: $darkbgcolor;
+}
+
+.self_title{
+  text-align: center;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 600;
+  margin: 20px;
+  font-size: 2rem;
+  color: rgb(53, 48, 48);
+}
+
+.ob_fit{
+  object-fit: cover;
 }
 
 

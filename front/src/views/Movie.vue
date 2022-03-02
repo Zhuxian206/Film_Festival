@@ -4,13 +4,18 @@ b-container#movie
     template(#overlay)
       h1 影片已下架
     b-row.mt-5
-      b-col(cols='12')
-        img.w-100(:src='image')
+      b-col.mb-5(cols='12')
+        img.w-100.ob_fit.shadow(:src='image' style="height: 450px;")
+        b-col.mt-5(cols='6')
+        .movie_title.mb-3
+          b-icon(icon="caret-right" variant="dark")
+          |  {{ name }}
+        p {{ description }}
+        hr.mt-5
         b-col(cols='6')
-        h1 {{ name }}
-        p(style='white-space: pre') {{ description }}
-        b-col(cols='6')
-        h3 {{ director }}
+        .director_name.mt-5.mb-2
+          p.mb-2.director_dec 導演簡介
+          | {{ director }}
         p {{ directorDesc }}
 </template>
 <script>
