@@ -17,6 +17,8 @@
         b-nav-item(v-if="user.isLogin && user.isAdmin" to='/admin') 管理中心
         b-nav-item(v-if="user.isLogin && !user.isAdmin" to='/user') 會員中心
   router-view(:key='$route.fullPath')
+  .main_footer.w-100.p-5
+    p 影展資訊
 </template>
 
 <script>

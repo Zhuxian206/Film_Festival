@@ -1,0 +1,23 @@
+.moviecard{
+  border: 1px solid rgb(93, 93, 93);
+  border-radius: 13px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  background: rgb(93, 93, 93);
+  color: #fff;
+  h3{
+    font-size: 1.5em;
+    color: rgb(161, 161, 161);
+    padding-top: 10px;
+  }
+  h3, p{
+    padding-left: 15px;
+  }
+  p{
+    color: #fff;
+  }
+  // .mcard_img{
+  //   border-top-left-radius: 10px;
+  //   border-top-right-radius: 10px;
+  // }
+}
